@@ -11,10 +11,16 @@ SEARCH
  */
 .search {
     flex: 0 0 40%;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--grey-light-2);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -132,11 +138,24 @@ SIDE NAVIGATION
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+    }
+
     &__item {
         position: relative;
 
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
+
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 0;
+            }
         }
 
         &:before {
@@ -175,6 +194,17 @@ SIDE NAVIGATION
             align-items: center;
             padding: 1.5rem 3rem;
             z-index: 1;
+
+            @media only screen and (max-width: $bp-medium) {
+                justify-content: center;
+                padding: 2rem;
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                flex-direction: column;
+                padding: 1rem;
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -183,6 +213,13 @@ SIDE NAVIGATION
         height: 1.75rem;
         margin-right: 2rem;
         fill: currentColor;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-bottom: 3px;
+        }
     }
 }
 
@@ -191,6 +228,10 @@ SIDE NAVIGATION
     text-align: center;
     padding: 2.5rem;
     color: var(--grey-light-4);
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 /***
@@ -220,17 +261,23 @@ OVERVIEW
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
         margin-right: auto;
+        display: flex;
     }
 
     &__icon-star,
     &__icon-location {
         width: 1.75rem;
         height: 1.75rem;
-        fill: var(--primary)
+        fill: var(--primary);
     }
 
     &__location {
@@ -253,6 +300,10 @@ OVERVIEW
         align-items: center;
         align-self: stretch;
         padding: 0 2.25rem;
+
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
 
         &-average {
             font-size: 2.25rem;
@@ -376,7 +427,7 @@ RECOMMEND
     }
 
     &__friends {
-
+        display: flex;
     }
 
     &__photo {
@@ -387,7 +438,7 @@ RECOMMEND
         border: 3px solid #fff;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 }
@@ -404,6 +455,11 @@ REVIEWS
     padding: 3rem;
     margin-bottom: 3.5rem;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
     &__text {
         position: relative;
@@ -465,6 +521,10 @@ CTA
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
 
     &__book-now {
         text-transform: uppercase;
