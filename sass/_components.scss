@@ -401,11 +401,13 @@ LIST
             background-image: url(../img/chevron-thin-right.svg);
             background-size: cover;
 
-            @supports (-webkit-mask-image: url(../img/chevron-thin-right.svg)) and (-webkit-mask-size: cover) {
+            @supports (-webkit-mask-image: url(img)) or (mask-image: url(img)) {
                 background-image: none;
                 background-color: var(--primary);
                 -webkit-mask-image: url(../img/chevron-thin-right.svg);
                 -webkit-mask-size: cover;
+                mask-image: url(../img/chevron-thin-right.svg);
+                mask-size: cover;
             }
         }
     }
